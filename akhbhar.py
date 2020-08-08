@@ -1,5 +1,3 @@
-#  my api key is 6f85e6bc012a4f779919bb0d60661289
-
 #  ye script aapko latest news headlines padh ke sunaye gi 
 import pyttsx3
 import requests
@@ -24,9 +22,9 @@ def speaker(no,newnews):
 
 
 if __name__ == "__main__":
-    url = ('http://newsapi.org/v2/top-headlines?'
-       'country=in&'
-       'apiKey=6f85e6bc012a4f779919bb0d60661289')
+    tokken = input("Enter your news api tokken/key: ")
+    code = input("Enter iso code of your country: ")
+    url = f"https://newsapi.org/v2/top-headlines?country={code}&apiKey={tokken}"
     response = requests.get(url)
     titles = response.json()
     newtitles = titles["articles"]
